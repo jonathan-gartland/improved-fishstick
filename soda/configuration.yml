@@ -1,0 +1,19 @@
+data_source tasty_bytes_sample_data:
+  type: snowflake
+  connection:
+    username: ${ SNOWFLAKE_USER }
+    password: ${ SNOWFLAKE_PASS }
+    account: ${ SNOWFLAKE_ACCOUNT }
+    port: 443
+    database: tasty_bytes_sample_data
+    warehouse: compute_wh
+    connection_timeout: 240
+    session_parameters:
+      QUERY_TAG: soda-queries
+      QUOTED_IDENTIFIERS_IGNORE_CASE: false
+  schema: raw_pos
+
+soda_cloud:
+  host: cloud.us.soda.io
+  api_key_id: ${ SODA_CLOUD_API_KEY }
+  api_key_secret: ${ SODA_CLOUD_API_SECRET }
