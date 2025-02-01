@@ -1,6 +1,6 @@
 name: Scan for data quality
 
-on: [push, pull_request]
+on: pull_request
 jobs:
   soda_scan:
     runs-on: ubuntu-latest
